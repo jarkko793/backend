@@ -1,11 +1,23 @@
 [package]
-name = "client_front_end"
+name = "ap_client_backend_v2"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
 
 [dependencies]
-fltk = { version = "^1.5", features = ["fltk-bundled"] }
-client_for_advanced_programming= { path = "../client_for_advanced_programming" }
-messages ={git = "https://github.com/The-Null-Pointer-Patrol/messages.git"}
-wg_2024 = { git = "https://github.com/WGL-2024/WGL_repo_2024.git", features = ["serialize","debug"] }
+log = "0.4.25"
+messages ={git = "https://github.com/The-Null-Pointer-Patrol/messages.git" }
 crossbeam-channel = "0.5.13"
+wg_2024 = { git = "https://github.com/WGL-2024/WGL_repo_2024.git", features = ["serialize", "debug"] }
+serde = { version = "1.0.217", features = ["derive"] }
+anyhow = "1.0"
+rand = { version  = "0.9.0", features= ["thread_rng"]}
+assembler ={git = "https://github.com/The-Null-Pointer-Patrol/assembler.git" }
+petgraph = "0.7.1"
+once_cell = "1.21.3"
+[dev-dependencies]
+pretty_assertions = "1.4.1"
