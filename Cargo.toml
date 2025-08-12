@@ -1,0 +1,11 @@
+[package]
+name = "client_front_end"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fltk = { version = "^1.5", features = ["fltk-bundled"] }
+client_for_advanced_programming= { path = "../client_for_advanced_programming" }
+messages ={git = "https://github.com/The-Null-Pointer-Patrol/messages.git"}
+wg_2024 = { git = "https://github.com/WGL-2024/WGL_repo_2024.git", features = ["serialize","debug"] }
+crossbeam-channel = "0.5.13"
