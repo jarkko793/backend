@@ -43,7 +43,7 @@ impl Service {
     /// as well as simulation controller related interactions.
     /// # Errors
     /// Propagates `Error`s encountered with crossbeam-channels.
-    pub fn run(&mut self) {
+    pub fn run(&mut self) -> !{
         self.router.listen_channels();
     }
 
