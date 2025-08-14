@@ -96,7 +96,7 @@ mod tests {
     use super::*;
     use messages::{Message, MessageType, RequestType};
     use wg_2024::network::SourceRoutingHeader;
-    use wg_2024::packet::{FloodRequest, NodeType, PacketType};
+    use wg_2024::packet::{NodeType, PacketType};
 
     // For test, assume NodeId is u8 (or define a mock NodeId)
     type NodeId = u8;
@@ -111,6 +111,7 @@ mod tests {
     }
 
     #[test]
+    #[allow(clippy::panic, clippy::expect_used)]
     fn test_message_to_packets_and_back() {
         let message = make_test_message();
         let routing_header = SourceRoutingHeader::empty_route();
@@ -129,6 +130,7 @@ mod tests {
         assert_eq!(message, reconstructed);
     }
     #[test]
+    #[allow(clippy::panic)]
     fn test_get_new_flood_request_packet() {
         let session_id = 123;
         let initiator_id = 45;
