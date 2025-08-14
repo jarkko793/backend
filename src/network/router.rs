@@ -67,7 +67,7 @@ impl Router {
         }
     }
 
-    pub fn listen_channels(&mut self) {
+    pub fn listen_channels(&mut self) -> !{
         loop {
             select! {
 
